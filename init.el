@@ -104,6 +104,10 @@
 
 (require 'init-dash)
 (require 'init-ledger)
+
+;; Packages not in the original depot
+(require 'init-latex)
+
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
