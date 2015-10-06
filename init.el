@@ -108,6 +108,7 @@
 ;; Packages not in the original depot
 (require 'init-latex)
 (require 'auto-complete-auctex)
+(require 'init-predictive)
 
 ;; Extra packages which don't require any configuration
 

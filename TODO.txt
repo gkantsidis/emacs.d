@@ -1,0 +1,14 @@
+Things to do:
+
+1. Predictive-mode does not seem to work.
+ This is downloaded from a separate git inside extra/predictive.
+ 
+ 2. preview-latex does not seem to work (preview-latex.el does not exist in auctex)
+ 
+3. latex-preview-pane not working
+ We downloaded both from melpa and from git (in extra)
+ Disabled in init-latex
+ 
+4. Check that all minor modes for latex are enabled correctly.
+
+5. Add emacs to windows explorer context menu

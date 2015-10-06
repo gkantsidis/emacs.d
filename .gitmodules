@@ -1,0 +1,6 @@
+[submodule "extra/predictive"]
+	path = extra/predictive
+	url = http://www.dr-qubit.org/git/predictive.git
+[submodule "extra/latex-preview-pane"]
+	path = extra/latex-preview-pane
+	url = https://github.com/jsinglet/latex-preview-pane.git

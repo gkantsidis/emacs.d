@@ -82,6 +82,11 @@ The values are saved in `latex-help-cmd-alist' for speed."
       )
     latex-help-cmd-alist
     )
-         
+       
+
+(require-package 'cdlatex)       
+(require 'cdlatex)
+
+;; (require-package 'latex-preview-pane)
       
 (provide 'init-latex)
