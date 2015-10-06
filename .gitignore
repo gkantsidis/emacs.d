@@ -4,6 +4,7 @@ server/
 /auto-save-list
 /.session
 /custom.el
+/ede-projects.el
 *.elc
 CVS
 .svn
