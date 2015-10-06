@@ -107,6 +107,7 @@
 
 ;; Packages not in the original depot
 (require 'init-latex)
+(require 'auto-complete-auctex)
 
 ;; Extra packages which don't require any configuration
 

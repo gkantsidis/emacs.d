@@ -68,19 +68,20 @@
 (defun latex-help-get-cmd-alist () ;corrected version:
 "Scoop up the commands in the index of the latex info manual.
 The values are saved in `latex-help-cmd-alist' for speed."
-;; mm, does it contain any cached entries
-(if (not (assoc "\\begin" latex-help-cmd-alist))
-    (save-window-excursion
-(setq latex-help-cmd-alist nil)
-(Info-goto-node (concat latex-help-file "Command Index"))
-      (end-of-buffer)
-      (while (re-search-backward "^\\* \\(.+\\): *\\(.+\\)\\." nil t)
-        (setq key (ltxh-buffer-substring (match-beginning 1) (match-end 1)))
-        (setq value (ltxh-buffer-substring (match-beginning 2) (match-end 2)))
-        (setq latex-help-cmd-alist
-              (cons (cons key value) latex-help-cmd-alist))))
-  )
-latex-help-cmd-alist
-)
-
+    ;; mm, does it contain any cached entries
+    (if (not (assoc "\\begin" latex-help-cmd-alist))
+        (save-window-excursion
+    (setq latex-help-cmd-alist nil)
+    (Info-goto-node (concat latex-help-file "Command Index"))
+          (end-of-buffer)
+          (while (re-search-backward "^\\* \\(.+\\): *\\(.+\\)\\." nil t)
+            (setq key (ltxh-buffer-substring (match-beginning 1) (match-end 1)))
+            (setq value (ltxh-buffer-substring (match-beginning 2) (match-end 2)))
+            (setq latex-help-cmd-alist
+                  (cons (cons key value) latex-help-cmd-alist))))
+      )
+    latex-help-cmd-alist
+    )
+         
+      
 (provide 'init-latex)
