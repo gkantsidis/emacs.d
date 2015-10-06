@@ -1,0 +1,3 @@
+Consider also installing:
+
+1. zlib from http://gnuwin32.sourceforge.net/packages/zlib.htm
