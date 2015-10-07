@@ -110,6 +110,11 @@
 (require 'auto-complete-auctex)
 (require 'init-predictive)
 
+(require 'init-c-cpp)
+(require 'init-dotnet)
+(require 'init-linum)
+
+
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)

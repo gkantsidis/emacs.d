@@ -87,6 +87,49 @@ The values are saved in `latex-help-cmd-alist' for speed."
 (require-package 'cdlatex)       
 (require 'cdlatex)
 
+;;
+;; Outline
+;;
+(require-package 'outline-magic)
+(add-hook 'latex-mode-hook      ; or 'LaTeX-mode-hook for AUCTeX
+    (lambda ()
+        (setq outline-promotion-headings
+            '("\\chapter" "\\section" "\\subsection"
+            "\\subsubsection" "\\paragraph" "\\subparagraph"))))
+
+(add-hook 'texinfo-mode-hook
+    (lambda ()
+        (setq outline-promotion-headings
+            '("@chapter" "@section" "@subsection" "@subsubsection" nil
+              "@unnumbered" "@unnumberedsec" "@unnumberedsubsec"
+                                  "@unnumberedsubsubsec" nil
+              "@appendix" "@appendixsec" "@appendixsubsec"
+                                    "@appendixsubsubsec" nil
+              "@chapheading" "@heading" "@subheading" "@subsubheading")))) 
+
+;;
+;; Emacs minor mode for avoiding cliches and bad grammar when writing about art (or other topics)
+;;
+(require-package 'artbollocks-mode)
+(add-hook 'text-mode-hook 'artbollocks-mode)
+
+;;
+(require-package 'auto-complete-auctex)
+
+(require-package 'auctex-latexmk)
+(auctex-latexmk-setup)
+
+(setq reftex-plug-into-AUCTeX t)
+
+(require-package 'latex-extra)
+(add-hook 'LaTeX-mode-hook #'latex-extra-mode)
+
+(require-package 'latex-pretty-symbols)
+
+;;
+;; EXPERIMENTAL AND NOT WORKING
+;;
+
 ;; (require-package 'latex-preview-pane)
       
 (provide 'init-latex)
