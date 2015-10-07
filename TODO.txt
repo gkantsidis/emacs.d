@@ -12,3 +12,5 @@ Things to do:
 4. Check that all minor modes for latex are enabled correctly.
 
 5. Add emacs to windows explorer context menu
+
+6. Integrate TextLint with emacs.
