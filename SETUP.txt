@@ -27,3 +27,6 @@ Additional programs / libraries to install
 1) zlib
 -------
 Install zlib from http://gnuwin32.sourceforge.net/packages/zlib.htm
+
+2) GnuPG
+--------
