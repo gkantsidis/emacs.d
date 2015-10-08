@@ -12,4 +12,7 @@
               (add-to-list 'ac-sources 'ac-source-c-headers)
               (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
 
+(require-package 'auto-complete-c-headers)
+(add-to-list 'ac-sources 'ac-source-c-headers)              
+
 (provide 'init-c-cpp)
