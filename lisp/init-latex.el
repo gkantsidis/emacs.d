@@ -126,10 +126,19 @@ The values are saved in `latex-help-cmd-alist' for speed."
 
 (require-package 'latex-pretty-symbols)
 
+(setq doc-view-ghostscript-program "gswin64c")
+
 ;;
 ;; EXPERIMENTAL AND NOT WORKING
 ;;
 
+;; (load "preview-latex.el" nil t t)
+
 ;; (require-package 'latex-preview-pane)
+
+
+;;
+;; End of configuration
+;;
       
 (provide 'init-latex)

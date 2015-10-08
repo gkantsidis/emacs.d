@@ -114,6 +114,8 @@
 (require 'init-dotnet)
 (require 'init-linum)
 
+(require 'init-statistics)
+
 
 ;; Extra packages which don't require any configuration
 
