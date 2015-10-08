@@ -115,7 +115,8 @@
 (require 'init-linum)
 
 (require 'init-statistics)
-
+(require 'init-ocaml)
+(require 'init-ecb)
 
 ;; Extra packages which don't require any configuration
 
