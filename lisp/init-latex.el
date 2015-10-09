@@ -136,6 +136,9 @@ The values are saved in `latex-help-cmd-alist' for speed."
 
 ;; (require-package 'latex-preview-pane)
 
+;; Set bibtex dialect to biblatex
+; (bibtex-set-dialect 'biblatex)
+
 
 ;;
 ;; End of configuration
