@@ -1,7 +1,12 @@
+;;; init-c-cpp.el --- Customize environment for C/C++ programming
+;;; Commentary:
+;;;  Declares packages and performs customizations for C/C++ programming.
+
 ;;
 ;; C/C++
 ;;
 
+;;; Code:
 (require-package 'google-c-style)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
@@ -13,7 +18,7 @@
               (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
 
 (require-package 'auto-complete-c-headers)
-(add-to-list 'ac-sources 'ac-source-c-headers)              
+(add-to-list 'ac-sources 'ac-source-c-headers)
 
 (require-package 'ac-etags)
 (custom-set-variables
@@ -22,10 +27,11 @@
     '(progn
         (ac-etags-setup)))
 (defun my/c-mode-common-hook ()
-    (add-to-list 'ac-sources 'ac-source-etags))
+  (add-to-list 'ac-sources 'ac-source-etags))
 
 (add-hook 'c-mode-common-hook 'my/c-mode-common-hook)
 
 
 
 (provide 'init-c-cpp)
+;;; init-c-cpp.el ends here
