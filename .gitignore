@@ -4,6 +4,7 @@ server/
 /.emacs.desktop
 /auto-save-list
 /.session
+/session.*
 /custom.el
 /ede-projects.el
 *.elc
