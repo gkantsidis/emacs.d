@@ -119,6 +119,7 @@
 
 ;; Packages not in the original depot
 (require 'init-latex)
+(require 'auto-complete)
 (require 'auto-complete-auctex)
 (require 'init-predictive)
 
