@@ -31,7 +31,8 @@
 
 (add-hook 'c-mode-common-hook 'my/c-mode-common-hook)
 
-
+(require-package 'modern-cpp-font-lock)
+(modern-c++-font-lock-global-mode t)
 
 (provide 'init-c-cpp)
 ;;; init-c-cpp.el ends here

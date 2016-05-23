@@ -124,6 +124,7 @@
 (require 'init-predictive)
 
 (require 'init-c-cpp)
+(require 'init-llvm)
 (require 'init-dotnet)
 (require 'init-linum)
 
