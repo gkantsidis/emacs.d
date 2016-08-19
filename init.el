@@ -2,6 +2,7 @@
 ;;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
 
+;;; Code:
 (let ((minver "23.3"))
   (when (version<= emacs-version "23.1")
     (error "Your Emacs is too old -- this config requires v%s or higher" minver)))
@@ -117,6 +118,22 @@
 
 (require 'init-dash)
 (require 'init-ledger)
+
+;; Packages not in the original depot
+(require 'init-latex)
+(require 'auto-complete)
+(require 'auto-complete-auctex)
+(require 'init-predictive)
+
+(require 'init-c-cpp)
+(require 'init-llvm)
+(require 'init-dotnet)
+(require 'init-linum)
+
+(require 'init-statistics)
+(require 'init-ocaml)
+(require 'init-ecb)
+
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
@@ -167,3 +184,4 @@
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
+;;; init.el ends here

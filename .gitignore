@@ -1,9 +1,12 @@
+abbrev_defs
+server/
 /url/cache
 /.emacs.desktop
 /auto-save-list
 /.session
 /session.*
 /custom.el
+/ede-projects.el
 *.elc
 CVS
 .svn
