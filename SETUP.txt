@@ -1,3 +1,10 @@
+Dictionary
+==========
+Use `hunspell` (it is also part of the configuration process, `hunspell.portable`).
+If it compaints that it cannot find the dictionary, check the dictionaries installed with
+`hunspell -D`. You can change it in emacs configuration options, and, if necessary, copy
+the default dictionary to what emacs expects to find.
+
 Integration with windows
 ========================
 From: http://www.emacswiki.org/emacs/EmacsMsWindowsIntegration
