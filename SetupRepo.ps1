@@ -4,10 +4,10 @@
 param(    
 )
 
-if ((git remote) -notcontains "official") {
+if ((git remote) -notcontains "purcell") {
     Write-Verbose -Message "Creating remote for official depot"
-    git remote add --tags official https://github.com/purcell/emacs.d
-    git fetch official
+    git remote add --tags purcell https://github.com/purcell/emacs.d
+    git fetch purcell
 }
 
 <#$branches = git branch --list
