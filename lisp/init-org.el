@@ -1,3 +1,8 @@
+;;; init-org.el --- Load and initializes the org mode
+;;; Commentary:
+;;;    Installs and customizes org mode
+
+;;; Code:
 (when (< emacs-major-version 24)
   (require-package 'org))
 (require-package 'org-fstree)
@@ -366,3 +371,14 @@ typical word processor."
 
 
 (provide 'init-org)
+
+
+;;; In case the user has further customizations, call them
+
+(when
+    (file-exists-p "init-org-mylocal.el")
+  (require 'init-org-mylocal)
+  )
+
+
+;;; init-org.el ends here
