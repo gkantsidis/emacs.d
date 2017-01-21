@@ -405,7 +405,7 @@ If FILEXT is provided, return files with extension FILEXT instead."
 ;;; In case there are local machine-specific customizations, call them
 
 (when
-    (file-exists-p "init-org-mylocal.el")
+    (file-exists-p (concat (file-name-directory load-file-name) "init-org-mylocal.el"))
   (require 'init-org-mylocal)
   )
 
