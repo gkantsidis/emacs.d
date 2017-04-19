@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ;;; init-org.el --- Load and initializes the org mode
 ;;; Commentary:
 ;;;    Installs and customizes org mode
@@ -6,8 +5,6 @@
 ;;; Code:
 (when (< emacs-major-version 24)
   (require-package 'org))
-=======
->>>>>>> a6e76e0b72652d9124d1911c13621709e0592d1f
 (require-package 'org-fstree)
 (when *is-a-mac*
   (maybe-require-package 'grab-mac-link)
