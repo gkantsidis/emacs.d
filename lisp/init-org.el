@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ;;; init-org.el --- Load and initializes the org mode
 ;;; Commentary:
 ;;;    Installs and customizes org mode
@@ -5,6 +6,8 @@
 ;;; Code:
 (when (< emacs-major-version 24)
   (require-package 'org))
+=======
+>>>>>>> a6e76e0b72652d9124d1911c13621709e0592d1f
 (require-package 'org-fstree)
 (when *is-a-mac*
   (maybe-require-package 'grab-mac-link)
@@ -74,8 +77,7 @@ typical word processor."
         (set (make-local-variable 'blink-cursor-interval) 0.6)
         (set (make-local-variable 'show-trailing-whitespace) nil)
         (flyspell-mode 1)
-        (when (fboundp 'visual-line-mode)
-          (visual-line-mode 1)))
+        (visual-line-mode 1))
     (kill-local-variable 'truncate-lines)
     (kill-local-variable 'word-wrap)
     (kill-local-variable 'cursor-type)
@@ -83,8 +85,7 @@ typical word processor."
     (buffer-face-mode -1)
     ;; (delete-selection-mode -1)
     (flyspell-mode -1)
-    (when (fboundp 'visual-line-mode)
-      (visual-line-mode -1))))
+    (visual-line-mode -1)))
 
 ;;(add-hook 'org-mode-hook 'buffer-face-mode)
 
@@ -113,6 +114,10 @@ typical word processor."
 
 (after-load 'org-agenda
   (add-to-list 'org-agenda-after-show-hook 'org-show-entry))
+
+(defadvice org-refile (after sanityinc/save-all-after-refile activate)
+  "Save all org buffers after each refile operation."
+  (org-save-all-org-buffers))
 
 ;; Exclude DONE state tasks from refile targets
 (defun sanityinc/verify-refile-target ()
