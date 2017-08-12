@@ -6,6 +6,7 @@
 (when (< emacs-major-version 24)
   (require-package 'org))
 (require-package 'org-fstree)
+
 (when *is-a-mac*
   (maybe-require-package 'grab-mac-link)
   (require-package 'org-mac-iCal))
@@ -56,6 +57,8 @@
 
 
 
+(require-package 'writeroom-mode)
+
 (define-minor-mode prose-mode
   "Set up a buffer for prose editing.
 This enables or modifies a number of settings so that the
@@ -64,6 +67,7 @@ typical word processor."
   nil " Prose" nil
   (if prose-mode
       (progn
+        (writeroom-mode 1)
         (setq truncate-lines nil)
         (setq word-wrap t)
         (setq cursor-type 'bar)
@@ -82,7 +86,8 @@ typical word processor."
     (buffer-face-mode -1)
     ;; (delete-selection-mode -1)
     (flyspell-mode -1)
-    (visual-line-mode -1)))
+    (visual-line-mode -1)
+    (writeroom-mode 0)))
 
 ;;(add-hook 'org-mode-hook 'buffer-face-mode)
 
