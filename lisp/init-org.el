@@ -57,7 +57,7 @@
 
 
 
-(require-package 'writeroom-mode)
+(maybe-require-package 'writeroom-mode)
 
 (define-minor-mode prose-mode
   "Set up a buffer for prose editing.
@@ -67,7 +67,8 @@ typical word processor."
   nil " Prose" nil
   (if prose-mode
       (progn
-        (writeroom-mode 1)
+        (when (fboundp 'writeroom-mode)
+          (writeroom-mode 1))
         (setq truncate-lines nil)
         (setq word-wrap t)
         (setq cursor-type 'bar)
@@ -87,7 +88,8 @@ typical word processor."
     ;; (delete-selection-mode -1)
     (flyspell-mode -1)
     (visual-line-mode -1)
-    (writeroom-mode 0)))
+    (when (fboundp 'writeroom-mode)
+      (writeroom-mode 0))))
 
 ;;(add-hook 'org-mode-hook 'buffer-face-mode)
 
