@@ -105,7 +105,7 @@
 (require 'init-toml)
 (require 'init-yaml)
 (require 'init-docker)
-(maybe-require-package 'terraform-mode)
+(require 'init-terraform)
 
 (require 'init-paredit)
 (require 'init-lisp)
@@ -148,6 +148,7 @@
   (require-package 'osx-location))
 (require-package 'regex-tool)
 (require-package 'f)
+(maybe-require-package 'dotenv-mode)
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
