@@ -1,6 +1,6 @@
 ;; Show number of matches while searching
 (when (maybe-require-package 'anzu)
-  (global-anzu-mode t)
+  (add-hook 'after-init-hook 'global-anzu-mode)
   (setq anzu-mode-lighter "")
   (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
   (global-set-key [remap query-replace] 'anzu-query-replace))
@@ -17,11 +17,11 @@
 (defun isearch-yank-symbol ()
   "*Put symbol at current point into search string."
   (interactive)
-  (let ((sym (symbol-at-point)))
+  (let ((sym (thing-at-point 'symbol)))
     (if sym
         (progn
           (setq isearch-regexp t
-                isearch-string (concat "\\_<" (regexp-quote (symbol-name sym)) "\\_>")
+                isearch-string (concat "\\_<" (regexp-quote sym) "\\_>")
                 isearch-message (mapconcat 'isearch-text-char-description isearch-string "")
                 isearch-yank-flag t))
       (ding)))
