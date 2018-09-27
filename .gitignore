@@ -53,3 +53,4 @@ site-lisp/package/
 /rake.cache
 /plantuml.jar
 /magithub
+projectile.cache
