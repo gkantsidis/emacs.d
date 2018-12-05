@@ -7,7 +7,7 @@
 ;;
 
 ;;; Code
-(require-package 'llvm-mode)
+(ignore-errors (require-package 'llvm-mode))
 
 (provide 'init-llvm)
 ;;; init-llvm.el ends here

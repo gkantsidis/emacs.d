@@ -5,7 +5,7 @@
 ;;; Code:
 (when (< emacs-major-version 24)
   (require-package 'org))
-(require-package 'org-fstree)
+;;; (require-package 'org-fstree) --- Package too old
 
 (when *is-a-mac*
   (maybe-require-package 'grab-mac-link))
