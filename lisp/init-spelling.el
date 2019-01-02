@@ -4,6 +4,12 @@
 
 (require 'ispell)
 
+(unless (boundp 'ispell-local-dictionary)
+         (setq ispell-local-dictionary "en_US") 
+         (setq ispell-local-dictionary-alist
+           '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)))
+)
+
 (when (executable-find ispell-program-name)
   ;; Add spell-checking in comments for all programming language modes
   (add-hook 'prog-mode-hook 'flyspell-prog-mode)
