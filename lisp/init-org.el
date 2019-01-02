@@ -1,11 +1,10 @@
-;;; init-org.el --- Load and initializes the org mode
+;;; init-org.el --- Org-mode config -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;;    Installs and customizes org mode
 
 ;;; Code:
 (when (< emacs-major-version 24)
   (require-package 'org))
-;;; (require-package 'org-fstree) --- Package too old
 
 (when *is-a-mac*
   (maybe-require-package 'grab-mac-link))
@@ -67,9 +66,6 @@
   (add-hook 'org-agenda-mode-hook
             (lambda () (add-hook 'window-configuration-change-hook 'org-agenda-align-tags nil t))))
 
-
-
-
 (maybe-require-package 'writeroom-mode)
 
 (define-minor-mode prose-mode
@@ -113,7 +109,7 @@ typical word processor."
 
 
 (setq org-support-shift-select t)
-
+
 ;;; Capturing
 
 (global-set-key (kbd "C-c c") 'org-capture)
@@ -126,7 +122,6 @@ typical word processor."
         ))
 
 
-
 ;;; Refiling
 
 (setq org-refile-use-cache nil)
@@ -165,7 +160,7 @@ typical word processor."
 ;; Allow refile to create parent tasks with confirmation
 (setq org-refile-allow-creating-parent-nodes 'confirm)
 
-
+
 ;;; To-do settings
 
 (setq org-todo-keywords
@@ -179,7 +174,6 @@ typical word processor."
               ("PROJECT" :inherit font-lock-string-face))))
 
 
-
 ;;; Agenda views
 
 (setq-default org-agenda-clockreport-parameter-plist '(:link t :maxlevel 3))
@@ -271,7 +265,6 @@ typical word processor."
 
 (add-hook 'org-agenda-mode-hook 'hl-line-mode)
 
-
 ;;; Org clock
 
 ;; Save the running clock and all clock history when exiting Emacs, load it on startup
@@ -292,7 +285,6 @@ typical word processor."
       '(:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t))
 
 
-
 ;;; Show the clocked-in task - if any - in the header line
 (defun sanityinc/show-org-clock-in-header-line ()
   (setq-default header-line-format '((" " org-mode-line-string " "))))
@@ -309,7 +301,6 @@ typical word processor."
   (define-key org-clock-mode-line-map [header-line mouse-1] 'org-clock-menu))
 
 
-
 (when (and *is-a-mac* (file-directory-p "/Applications/org-clock-statusbar.app"))
   (add-hook 'org-clock-in-hook
             (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e"
@@ -319,20 +310,16 @@ typical word processor."
                                 "tell application \"org-clock-statusbar\" to clock out"))))
 
 
-
 ;; TODO: warn about inconsistent items, e.g. TODO inside non-PROJECT
 ;; TODO: nested projects!
 
 
-
 ;;; Archiving
 
 (setq org-archive-mark-done nil)
 (setq org-archive-location "%s_archive::* Archive")
 
 
-
-
 
 (require-package 'org-pomodoro)
 (setq org-pomodoro-keep-killed-pomodoro-time t)
@@ -389,7 +376,7 @@ typical word processor."
      (sqlite . t))))
 
 
-
+
 ;;; Helper to collect org files
 
 ;; ## Search org files recursively and add it to agenda
@@ -419,14 +406,11 @@ If FILEXT is provided, return files with extension FILEXT instead."
 
 
 (provide 'init-org)
-
-
 ;;; In case there are local machine-specific customizations, call them
 
 (when
     (file-exists-p (concat (file-name-directory load-file-name) "init-org-mylocal.el"))
   (require 'init-org-mylocal)
   )
-
 
 ;;; init-org.el ends here
