@@ -66,7 +66,10 @@ instead."
                          (error default-directory)))))
             (funcall search-function initial-input dir)))))
     (after-load 'ivy
-      (add-to-list 'ivy-height-alist (cons 'counsel-ag 20)))
+      (if (boundp 'ivy-height-alist)
+          (add-to-list 'ivy-height-alist (cons 'counsel-ag 20))
+          (set 'ivy-height-alist (cons 'counsel-ag 20))
+      ))
     (global-set-key (kbd "M-?") 'sanityinc/counsel-search-project)))
 
 
