@@ -1,9 +1,27 @@
-Dictionary
-==========
+# Extra setup steps
+
+## Dictionary
+
 Use `hunspell` (it is also part of the configuration process, `hunspell.portable`).
 If it compaints that it cannot find the dictionary, check the dictionaries installed with
 `hunspell -D`. You can change it in emacs configuration options, and, if necessary, copy
 the default dictionary to what emacs expects to find.
+
+In addition, in the configuration menu for spelling, do:
+
+- Set the path to `hunspell` executable.
+
+- Set the dictionary according to:
+
+  ```emacs
+  (setq ispell-local-dictionary-alist
+	 '(("en_US"
+		"[[:alpha:]]"
+		"[^[:alpha:]]"
+		"[']" nil ("-r") nil utf-8)
+  ```
+  
+I could place those definitions in `lisp/init-spelling.el`, but then I would force those configurations to everyone.
 
 Integration with windows
 ========================
