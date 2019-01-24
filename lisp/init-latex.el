@@ -11,6 +11,7 @@
 (require-package 'auctex)
 
 (require 'tex-mik)
+(require 'autopair)
 
 (mapc (lambda (mode)
         (add-hook 'LaTeX-mode-hook mode))
