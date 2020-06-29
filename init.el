@@ -105,6 +105,7 @@
 (require 'init-ruby)
 (require 'init-rails)
 (require 'init-sql)
+(require 'init-nim)
 (require 'init-rust)
 (require 'init-toml)
 (require 'init-yaml)
@@ -149,10 +150,10 @@
 
 ;; Extra packages which don't require any configuration
 
+(require-package 'sudo-edit)
 (require-package 'gnuplot)
 (require-package 'lua-mode)
 (require-package 'htmlize)
-(require-package 'dsvn)
 (when *is-a-mac*
   (require-package 'osx-location))
 (maybe-require-package 'regex-tool)
@@ -160,6 +161,7 @@
 (unless (eq system-type 'windows-nt)
   (maybe-require-package 'daemons))
 (maybe-require-package 'dotenv-mode)
+(maybe-require-package 'shfmt)
 
 (when (maybe-require-package 'uptimes)
   (setq-default uptimes-keep-count 200)
@@ -167,6 +169,8 @@
 
 (when (fboundp 'global-eldoc-mode)
   (add-hook 'after-init-hook 'global-eldoc-mode))
+
+(require 'init-direnv)
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
