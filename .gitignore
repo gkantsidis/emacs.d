@@ -58,3 +58,5 @@ projectile.cache
 /.lsp-session-v1
 /smex-items
 /eln-cache/
+*.exe.ignore
+ac-comphist.dat
