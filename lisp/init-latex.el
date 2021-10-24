@@ -9,7 +9,6 @@
 
 ;;; Code:
 (require-package 'auctex)
-(require-package 'autopair)
 
 (require 'tex-mik)
 
@@ -21,7 +20,7 @@
        'TeX-fold-mode
        'linum-mode
        'auto-complete-mode
-       'autopair-mode
+       'electric-pair-mode
        'outline-minor-mode))
 
 
