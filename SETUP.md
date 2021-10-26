@@ -20,13 +20,22 @@ In addition, in the configuration menu for spelling, do:
 		"[^[:alpha:]]"
 		"[']" nil ("-r") nil utf-8)
   ```
-  
+
 I could place those definitions in `lisp/init-spelling.el`, but then I would force those configurations to everyone.
 
-Integration with windows
-========================
-From: http://www.emacswiki.org/emacs/EmacsMsWindowsIntegration
+## Integration with windows
 
+From: <http://www.emacswiki.org/emacs/EmacsMsWindowsIntegration>
+
+Create a startup task to run emacs upon login:
+
+1. Open `Win+R` and then `shell:startup`
+
+1. Add an entry for emacs with target
+   `C:\tools\lib\Emacs\tools\emacs\bin\emacs.exe "--daemon"`
+   (adjust location of `Emacs`)
+
+Open files with `emacsclientw`.
 
 Create shortcut: emacsclientw.exe -na runemacs.exe -c ""
 
@@ -46,12 +55,11 @@ assoc .bib=CodeFile
 assoc .csv=txtfile
 assoc .tab=txtfile
 
-Additional programs / libraries to install
-==========================================
+## Additional programs / libraries to install
 
-1) zlib
--------
-Install zlib from http://gnuwin32.sourceforge.net/packages/zlib.htm
+1. zlib
+   Install zlib from <http://gnuwin32.sourceforge.net/packages/zlib.htm>
 
-2) GnuPG
---------
+1. GnuPG
+   TBD
+
