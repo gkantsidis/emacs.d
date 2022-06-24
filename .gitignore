@@ -60,3 +60,5 @@ projectile.cache
 /eln-cache/
 *.exe.ignore
 ac-comphist.dat
+/projects
+
