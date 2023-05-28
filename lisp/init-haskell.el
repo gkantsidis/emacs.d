@@ -35,10 +35,12 @@
 
 
   (with-eval-after-load 'page-break-lines
-    (add-to-list 'page-break-lines-modes 'haskell-mode)))
+    (add-to-list 'page-break-lines-modes 'haskell-mode))
+
+  (custom-set-variables
+    '(haskkell-stylish-on-save t)))
 
 
-
 (maybe-require-package 'dhall-mode)
 
 
