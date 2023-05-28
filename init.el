@@ -35,6 +35,7 @@
 
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
+(setq user-custom-file (locate-user-emacs-file "user-custom.el"))
 (require 'init-utils)
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 ;; Calls (package-initialize)
@@ -146,6 +147,7 @@
 (require 'init-statistics)
 (require 'init-ocaml)
 (require 'init-ecb)
+(require 'init-copilot)
 
 ;; Extra packages which don't require any configuration
 
@@ -183,6 +185,9 @@
 ;; Variables configured via the interactive 'customize' interface
 (when (file-exists-p custom-file)
   (load custom-file))
+
+(when (file-exists-p user-custom-file)
+  (load user-custom-file))
 
 ;; Locales (setting them earlier in this file doesn't work in X)
 (require 'init-locales)
