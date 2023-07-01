@@ -108,6 +108,7 @@
 (require 'init-nim)
 (require 'init-rust)
 (require 'init-toml)
+(require 'init-vale)
 (require 'init-yaml)
 (require 'init-docker)
 (require 'init-terraform)
