@@ -16,7 +16,7 @@
   (diminish 'paredit-mode " Par")
   ;; Suppress certain paredit keybindings to avoid clashes, including
   ;; my global binding of M-?
-  (dolist (binding '("C-<left>" "C-<right>" "C-M-<left>" "C-M-<right>" "M-s" "M-?"))
+  (dolist (binding '("RET" "C-<left>" "C-<right>" "C-M-<left>" "C-M-<right>" "M-s" "M-?"))
     (define-key paredit-mode-map (read-kbd-macro binding) nil)))
 
 
@@ -35,8 +35,8 @@
 
 (defun sanityinc/conditionally-enable-paredit-mode ()
   "Enable paredit during lisp-related minibuffer commands."
-  (if (memq this-command paredit-minibuffer-commands)
-      (enable-paredit-mode)))
+  (when (memq this-command paredit-minibuffer-commands)
+    (enable-paredit-mode)))
 
 
 (provide 'init-paredit)
