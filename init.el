@@ -130,8 +130,11 @@
 (require 'init-folding)
 (require 'init-dash)
 
-;;(require 'init-twitter)
-;; (require 'init-mu)
+(when (and (require 'treesit nil t)
+           (fboundp 'treesit-available-p)
+           (treesit-available-p))
+  (require 'init-treesitter))
+
 (require 'init-ledger)
 
 ;; Packages not in the original depot
@@ -155,6 +158,8 @@
 (require-package 'sudo-edit)
 (require-package 'gnuplot)
 (require-package 'lua-mode)
+(reformatter-define lua-format :program "lua-format" :args '("--indent-width=2" "--no-use-tab") :lighter "LuaFmt ")
+(setq-default lua-indent-level 2)
 (require-package 'htmlize)
 (when *is-a-mac*
   (require-package 'osx-location))
