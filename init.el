@@ -130,11 +130,6 @@
 (require 'init-folding)
 (require 'init-dash)
 
-(when (and (require 'treesit nil t)
-           (fboundp 'treesit-available-p)
-           (treesit-available-p))
-  (require 'init-treesitter))
-
 (require 'init-ledger)
 
 ;; Packages not in the original depot
@@ -144,22 +139,21 @@
 (require 'init-predictive)
 
 (require 'init-c-cpp)
-(require 'init-llvm)
 (require 'init-dotnet)
 (require 'init-linum)
+(require 'init-llvm)
+(require 'init-lua)
+(require 'init-ocaml)
 
 (require 'init-statistics)
-(require 'init-ocaml)
 (require 'init-ecb)
 (require 'init-copilot)
+(require 'init-biblio)
 
 ;; Extra packages which don't require any configuration
 
 (require-package 'sudo-edit)
 (require-package 'gnuplot)
-(require-package 'lua-mode)
-(reformatter-define lua-format :program "lua-format" :args '("--indent-width=2" "--no-use-tab") :lighter "LuaFmt ")
-(setq-default lua-indent-level 2)
 (require-package 'htmlize)
 (when *is-a-mac*
   (require-package 'osx-location))
@@ -178,6 +172,11 @@
   (add-hook 'after-init-hook 'global-eldoc-mode))
 
 (require 'init-direnv)
+
+(when (and (require 'treesit nil t)
+           (fboundp 'treesit-available-p)
+           (treesit-available-p))
+  (require 'init-treesitter))
 
 
 
