@@ -65,3 +65,4 @@ ac-comphist.dat
 quelpa/
 straight/
 user-custom.el
+/forge-*.sqlite
