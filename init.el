@@ -16,7 +16,8 @@
   (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(require 'init-benchmarking) ;; Measure startup time
+;; CG: The following creates a problem
+;;(require 'init-benchmarking) ;; Measure startup time
 
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
 (defconst *is-a-mac* (eq system-type 'darwin))
@@ -152,7 +153,8 @@
 
 (require 'init-c-cpp)
 (require 'init-dotnet)
-(require 'init-linum)
+;; CG: Not needed any more
+;; (require 'init-linum)
 (require 'init-llvm)
 (require 'init-lua)
 (require 'init-ocaml)
