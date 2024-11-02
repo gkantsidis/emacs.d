@@ -163,6 +163,7 @@
 (require 'init-copilot)
 (require 'init-biblio)
 (require 'init-uiua)
+(require 'init-zig)
 (require 'init-terminals)
 
 ;; Extra packages which don't require any configuration
