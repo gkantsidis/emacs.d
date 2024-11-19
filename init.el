@@ -166,6 +166,9 @@
 (require 'init-zig)
 (require 'init-terminals)
 
+(require 'init-jsp-elpa)
+(require 'init-ai)
+
 ;; Extra packages which don't require any configuration
 
 (require-package 'sudo-edit)
