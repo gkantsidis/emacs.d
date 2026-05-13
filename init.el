@@ -21,17 +21,17 @@
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
 (defconst *is-a-mac* (eq system-type 'darwin))
 
-
+
 ;; Adjust garbage collection threshold for early startup (see use of gcmh below)
 (setq gc-cons-threshold (* 128 1024 1024))
 
-
+
 ;; Process performance tuning
 
 (setq read-process-output-max (* 4 1024 1024))
 (setq process-adaptive-read-buffering nil)
 
-
+
 ;; Bootstrap config
 
 
@@ -43,7 +43,7 @@
 (require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-exec-path) ;; Set up $PATH
 
-
+
 ;; General performance tuning
 (when (require-package 'gcmh)
   (setq gcmh-high-cons-threshold (* 128 1024 1024))
@@ -53,7 +53,7 @@
 
 (setq jit-lock-defer-time 0)
 
-
+
 ;; Allow users to provide an optional "init-preload-local.el"
 (require 'init-preload-local nil t)
 
@@ -159,6 +159,7 @@
 ;; CG: Not needed any more
 ;; (require 'init-linum)
 (require 'init-llvm)
+(require 'init-go)
 (require 'init-lua)
 (require 'init-ocaml)
 
@@ -201,7 +202,7 @@
            (treesit-available-p))
   (require 'init-treesitter))
 
-
+
 
 ;; Allow access from emacsclient
 (add-hook 'after-init-hook
